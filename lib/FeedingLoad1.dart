@@ -1,7 +1,8 @@
 import 'dart:math';
-
+import 'package:calulator/HoseSize.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 class FeedingLoad extends StatefulWidget {
   const FeedingLoad({super.key});
@@ -23,8 +24,16 @@ class _FeedingLoadState extends State<FeedingLoad> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('FEEDING LOAD CALUATOR', style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text('FEEDING LOAD CALUATOR', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17)),
         backgroundColor: Colors.amberAccent,
+        actions: [
+          IconButton(
+              onPressed: (){
+                print("클릭");
+                Get.to(() => HoseSize());
+              },
+              icon: Icon(Icons.menu))
+        ],
       ),
       body: Center(
         child: Container(
